@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Principal</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript" src="Servicio.js"></script>
+	<script type="text/javascript" src="Local.js"></script>
+	<script type="text/javascript" src="Juno.js"></script>
+	<script type="text/javascript" src="Hermes.js"></script>
+</head>
+<body>
+	<div id="demo"></div>
+	<button onclick="ff();">kkk</button>
+	<button onclick="getToken();">iii</button>
+	<button onclick="insetarssesion();">ssesion</button>
+	<h1>Todo funciona de maravilla</h1>
+	<script type="text/javascript">
+		servicio = new Servicio();
+    local = new Local();
+	hermes = new Hermes(servicio, local);
+		function ff() {
+			// body...
+
+	
+	console.log(hermes.verificar_vendedor('admin','admin'));
+	console.log(localStorage.getItem('mi_secret_token'));
+}
+
+function getToken() {
+	console.log(local.obtener_token());
+}
+
+function insetarssesion() {
+	hermes.insertar_sesion("titulo", "descripcion", "color", "textcolor", "inicio", "anfitrion");
+}
+	</script>
+</body>
+</html>
